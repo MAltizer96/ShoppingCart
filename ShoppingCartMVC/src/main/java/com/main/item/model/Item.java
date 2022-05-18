@@ -13,11 +13,12 @@ public class Item {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idNum;
-	public String name;
-	public int costDollars;
-	public int costChange;
-	public int weight;
+	private int id;
+	private String name;
+	private int costDollars;
+	private int costChange;
+	private int weight;
+	private String type;
 	
 	
 	public Item(String name, int costDollars, int costChange, int weight) {
