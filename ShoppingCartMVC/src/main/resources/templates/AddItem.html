@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
 	integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
 	crossorigin="anonymous" />
 </head>
 <body>
+	<div class="container">
+		<h3>Add Item</h3>
+		<hr />
+		<form th:action="@{/item/saveItem}" th:object="${item}" method="POST">
+			<input type="text" th:field="*{name}" class="form-control col-4 mb-4"placeholder="Enter Item Name" /> 
+			
+			<input type="text" th:field="*{costDollars}"class="form-control col-4 mb-4" placeholder="Enter Dollar Cost" /> 
+				
+			<input type="text" th:field = "*{costChange}" class="form-control col-4 mb-4" placeholder="Enter Cent Cost" />
+			
+			<input type = "text" th:feild = "*{weight}" class = "form-control col-4 mb-4" placeholder = "Enter Item Weight" />
+			
+			<input type = "text" th:field = "*{type}" class = "form-control col-4 mb-4" placeholder = "Enter Item type"/>
+			<button type="submit" class="btn btn-primary col-2">Save</button>
 
-hello world
+			
+		</form>
+	</div>
+
 </body>
 </html>
