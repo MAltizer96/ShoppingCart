@@ -47,6 +47,15 @@ public class Cart {
 		return this.list.size();
 	}
 	
+	public double getTotalPrice() {
+		double totalPrice = 0;
+		for(Item item : list) {
+			totalPrice += item.getTotalCost();
+		}
+		return totalPrice;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return this.getSize() + " items in cart";
