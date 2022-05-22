@@ -30,8 +30,7 @@ public class ItemController {
 	
 	@RequestMapping("/addItem")
 	public ModelAndView addItemPage() {
-		ModelAndView mav = new ModelAndView("AddItem");
-		
+		ModelAndView mav = new ModelAndView("CreateItem");		
 		mav.addObject("item",new Item());
 		return mav;
 	}
@@ -39,8 +38,7 @@ public class ItemController {
 	@RequestMapping("/saveItem")
 	public String addItem(@ModelAttribute Item item) {
 		item.setTotalCost();
-		repo.save(item);
-		
+		repo.save(item);		
 		return "redirect:addItem";
 	}
 
