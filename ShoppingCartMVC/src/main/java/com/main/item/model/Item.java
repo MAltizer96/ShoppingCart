@@ -27,12 +27,17 @@ public class Item {
 	private String type;
 	
 	
-	public Item(String name, int costDollars, int costChange, int weight) {
+	public Item(String name, int costDollars, int costChange, double weight) {
 		super();
 		this.name = name;
 		this.costDollars = costDollars;
 		this.costChange = costChange;
 		this.weight = weight;
+	}
+	
+	public Item(String name) {
+		super();
+		this.name = name;
 	}
 	
 	//takes the set variables for the cost as a dollar and cost of change and sets it to the total cost
