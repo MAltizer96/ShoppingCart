@@ -33,7 +33,8 @@ public class CartController {
 	@RequestMapping("/checkOut")
 	public ModelAndView goToCheckOut() {
 		ModelAndView mav = new ModelAndView("CheckOut");
-		mav.addObject("items",cart.getList());
+		mav.addObject("fullCart",cart.getList());
+		mav.addObject("condensedCart",cart.getItemsInListNoRepeat());
 		mav.addObject("cartPrice",cart.getTotalPrice());
 		return mav;
 	}
