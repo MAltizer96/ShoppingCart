@@ -17,12 +17,9 @@ import com.main.item.repo.ItemRepo;
 public class CartController {
 	
 	@Autowired
-	Cart cart;
+	Cart cart;		
 	@Autowired
-	Item item;	
-	@Autowired
-	ItemRepo repo;
-	
+	ItemRepo repo;	
 	
 	
 	@RequestMapping("/addToCart/{id}")
