@@ -15,39 +15,49 @@
 	<div class = "container">
 		<h3>Item List</h3>
 		<hr/>		
-		<a th:href="@{addItem}" class="btn btn-primary">Add Item</a>
+		<a th:href="@{addItem}" class="btn btn-primary">Create Item</a><br><br>
 		
 		<table class="table table-bordered table-striped" id="itemTable">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Name</th>
-					<th>Cost Dollars</th>
-					<th>Cost Cents</th>
+					<th>Name</th>				
+					<th>Price</th>
 					<th>Weight</th>
 					<th>Type</th>
-					<th th:text = ${cartSize}>Add To Cart</th>
+					<th th:text = ${cartSize}></th>
 				</tr>			
 			</thead>
 			<tbody>
 				<tr th:each = "item: ${items}">
-					<form th:action = "@{/cart/addToCart}" th:object = ${item} method = "post">		
+						
 					<td th:text = ${item.id}/>
-					<td th:text = ${item.name}/>
-					<td th:text = ${item.costDollars}/>
-					<td th:text = ${item.costChange}/>
+					<td th:text = ${item.name}/>					
+					<td th:text = ${item.totalCost}/>
 					<td th:text = ${item.weight}/>
 					<td th:text = ${item.type}/>
-					<td>								
-					<input type = "submit" name = "Add"/>
-					</td>			
+					<td>
 					
-					</form>	
 					
+					<a th:href="@{/cart/addToCart/{id}(id=${item.id})}" class="btn btn-primary" ><span>Add</span></a>
+					<!--  separted by space for each dif one i have tried only top one used the form
+					
+					<form th:value = ${item.id} name = "id" th:action = "@{/cart/addToCart}" method = "post" >													
+					<input type = "submit" value = "Add To Cart"/>
+					
+					<a th:href="@{/cart/addToCart}" th:name = "id" th:value = "${item.id}" class="btn btn-primary" >Add</a>
+					
+					<input type = "submit" th:href="@{/cart/addToCart}" th:value = "${item.id}"/>	
+					
+					</form>	-->
+					</td>							
+										
 				</tr>
 			</tbody>
 		</table>
+		<a th:href="@{/cart/checkOut}" class="btn btn-primary">Check Out</a><br><br>
 	</div>
+	
 	
 	
 </body>
