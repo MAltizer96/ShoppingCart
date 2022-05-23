@@ -10,7 +10,6 @@ import com.main.item.model.Item;
 class CartTest {
 
 	Cart cart = null;
-
 	@BeforeEach
 	void setUp() throws Exception {
 
@@ -24,8 +23,13 @@ class CartTest {
 	}
 
 	@Test
-	void totalNumberOfItemsInCartTest() {
-		assertEquals(2, cart.totalNumberOfItemsInCart(new Item("Candy", 1, 99, 1)));
+	void totalNumberOfCertainItemInCartTest() {
+		assertEquals(2, cart.totalNumberOfCertainItemInCart(new Item("Candy", 1, 99, 1)));
+	}
+	
+	@Test
+	void itemsInListNoRepeatTest() {
+		assertEquals(3,cart.itemsInListNoRepeat().size());
 	}
 
 }

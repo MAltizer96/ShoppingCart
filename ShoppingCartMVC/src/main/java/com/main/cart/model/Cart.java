@@ -32,7 +32,7 @@ public class Cart {
 	public void removeItem(Item item) {
 		for (int i = 0; i < list.size(); i++) {
 
-			if(item.equals(list.get(i))) {
+			if (item.equals(list.get(i))) {
 				list.remove(i);
 			}
 		}
@@ -42,29 +42,44 @@ public class Cart {
 
 		list.add(item);
 	}
-	
+
 	public int getSize() {
 		return this.list.size();
 	}
-	
+
 	public double getTotalPrice() {
 		double totalPrice = 0;
-		for(Item item : list) {
+		for (Item item : list) {
 			totalPrice += item.getTotalCost();
 		}
 		return totalPrice;
 	}
-	
-	public int totalNumberOfItemsInCart(Item itemToSearch) {
+
+	public int totalNumberOfCertainItemInCart(Item itemToSearch) {
 		int total = 0;
-		for(Item item : list) {
-			if(itemToSearch.equals(item)) {
+		for (Item item : list) {
+			if (itemToSearch.equals(item)) {
 				total++;
 			}
 		}
 		return total;
 	}
-	
+
+	public List<Item> itemsInListNoRepeat() {
+		List<Item> newList = new ArrayList<Item>();
+
+		for (Item ogItem : list) {
+			if (!newList.contains(ogItem)) {
+				newList.add(ogItem);
+			}
+		}
+
+		for(Item item:newList) {
+			System.out.println(item);
+		}
+		return newList;
+	}
+
 	@Override
 	public String toString() {
 		return this.getSize() + " items in cart";
