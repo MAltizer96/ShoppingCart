@@ -55,6 +55,15 @@ public class Cart {
 		return totalPrice;
 	}
 	
+	public int totalNumberOfItemsInCart(Item itemToSearch) {
+		int total = 0;
+		for(Item item : list) {
+			if(itemToSearch.equals(item)) {
+				total++;
+			}
+		}
+		return total;
+	}
 	
 	@Override
 	public String toString() {
