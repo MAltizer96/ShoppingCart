@@ -55,7 +55,7 @@ public class Cart {
 		return totalPrice;
 	}
 
-	public int totalNumberOfCertainItemInCart(Item itemToSearch) {
+	public int getTotalNumberOfCertainItemInCart(Item itemToSearch) {
 		int total = 0;
 		for (Item item : list) {
 			if (itemToSearch.equals(item)) {
@@ -65,18 +65,13 @@ public class Cart {
 		return total;
 	}
 
-	public List<Item> itemsInListNoRepeat() {
+	public List<Item> getItemsInListNoRepeat() {
 		List<Item> newList = new ArrayList<Item>();
-
 		for (Item ogItem : list) {
 			if (!newList.contains(ogItem)) {
 				newList.add(ogItem);
 			}
-		}
-
-		for(Item item:newList) {
-			System.out.println(item);
-		}
+		}		
 		return newList;
 	}
 
