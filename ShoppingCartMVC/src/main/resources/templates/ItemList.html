@@ -36,20 +36,8 @@
 					<td th:text = ${item.totalCost}/>
 					<td th:text = ${item.weight}/>
 					<td th:text = ${item.type}/>
-					<td>
-					
-					
-					<a th:href="@{/cart/addToCart/{id}(id=${item.id})}" class="btn btn-primary" ><span>Add</span></a>
-					<!--  separted by space for each dif one i have tried only top one used the form
-					
-					<form th:value = ${item.id} name = "id" th:action = "@{/cart/addToCart}" method = "post" >													
-					<input type = "submit" value = "Add To Cart"/>
-					
-					<a th:href="@{/cart/addToCart}" th:name = "id" th:value = "${item.id}" class="btn btn-primary" >Add</a>
-					
-					<input type = "submit" th:href="@{/cart/addToCart}" th:value = "${item.id}"/>	
-					
-					</form>	-->
+					<td>					
+					<a th:href="@{/cart/addToCart/{id}(id=${item.id})}" class="btn btn-primary" ><span>Add</span></a>				
 					</td>							
 										
 				</tr>
