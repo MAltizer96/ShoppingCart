@@ -23,13 +23,13 @@ class CartTest {
 	}
 
 	@Test
-	void totalNumberOfCertainItemInCartTest() {
-		assertEquals(2, cart.totalNumberOfCertainItemInCart(new Item("Candy", 1, 99, 1)));
+	void getTotalNumberOfCertainItemInCartTest() {
+		assertEquals(2, cart.getTotalNumberOfCertainItemInCart(new Item("Candy", 1, 99, 1)));
 	}
 	
 	@Test
 	void itemsInListNoRepeatTest() {
-		assertEquals(3,cart.itemsInListNoRepeat().size());
+		assertEquals(3,cart.getItemsInListNoRepeat().size());
 	}
 
 }
