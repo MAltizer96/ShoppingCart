@@ -1,6 +1,7 @@
 package com.main.cart.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ public class Cart {
 
 	private List<Item> list;
 
+	
 	public Cart() {
 		super();
 		list = new ArrayList<Item>();
@@ -50,7 +52,7 @@ public class Cart {
 	public double getTotalPrice() {
 		double totalPrice = 0;
 		for (Item item : list) {
-			totalPrice += item.getTotalCost();
+			totalPrice += item.getTotalPrice();
 		}
 		return totalPrice;
 	}
@@ -68,11 +70,12 @@ public class Cart {
 	public List<Item> getItemsInListNoRepeat() {
 		List<Item> newList = new ArrayList<Item>();
 		for (Item ogItem : list) {
-			if (!newList.contains(ogItem)) {
+			if(!newList.contains(ogItem)) {
 				newList.add(ogItem);
 			}
-		}		
+		}			
 		return newList;
+		
 	}
 
 	@Override

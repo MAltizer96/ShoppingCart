@@ -13,10 +13,8 @@
 		<hr />
 		<form th:action="@{/item/saveItem}" th:object="${item}" method="POST">
 			<input type="text" th:field="*{name}" class="form-control col-4 mb-4"placeholder="Enter Item Name" /> 
-			
-			<input type="text" th:field="*{costDollars}"class="form-control col-4 mb-4" placeholder="Enter Dollar Cost" /> 
-				
-			<input type="text" th:field = "*{costChange}" class="form-control col-4 mb-4" placeholder="Enter Cent Cost" />
+										
+			<input type="text" th:field = "*{totalPrice}" class="form-control col-4 mb-4" placeholder="Enter Price" />
 			
 			<input type ="text" th:feild = "*{weight}" class = "form-control col-4 mb-4" placeholder = "Enter Item Weight" />
 			

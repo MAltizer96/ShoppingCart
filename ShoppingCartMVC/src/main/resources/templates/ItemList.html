@@ -31,11 +31,11 @@
 			<tbody>
 				<tr th:each = "item: ${items}">
 						
-					<td th:text = ${item.id}/>
-					<td th:text = ${item.name}/>					
-					<td th:text = ${item.totalCost}/>
-					<td th:text = ${item.weight}/>
-					<td th:text = ${item.type}/>
+					<td th:text = ${item.getId()}/>
+					<td th:text = ${item.getName()}/>					
+					<td th:text = ${item.getTotalPrice()}/>
+					<td th:text = ${item.getWeight()}/>
+					<td th:text = ${item.getType()}/>
 					<td>					
 					<a th:href="@{/cart/addToCart/{id}(id=${item.id})}" class="btn btn-primary" ><span>Add</span></a>				
 					</td>							
