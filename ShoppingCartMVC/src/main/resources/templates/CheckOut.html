@@ -12,6 +12,16 @@
 </head>
 <body>
 
+
+
+	
+	
+		
+				
+	
+	
+	
+	
 	<div class = "container">
 	<table class="table table-bordered table-striped" id="itemTable">
 	
@@ -21,14 +31,31 @@
 				<th>Item Weight</th>
 				<th>Item Type</th>
 				<th>Item Price</th>
+				<th>Total Items</th>
 			</tr>			
 		</thead>
 		<tbody>
-			<tr th:each = "item: ${items}">
-			<td th:text = "${item.name}"/>
+			
+			<tr th:each = "item : ${cart.getItemsInListNoRepeat()}" >
+			<td th:text = "${item.getName()}" />
+			<td th:text = "${item.getWeight()}" />
+			<td th:text = "${item.getType()}" />
+			<td th:text = "${item.getTotalPrice()}" />			
+			<td th:text = "${cart.getTotalNumberOfCertainItemInCart(item)}"/>
+			
+			<!-- 
+			 <td th:each = "itemTotal : ${cart.getTotalNumberOfCertainItemInCart(item)}"/>
+			-->	
+			
+		
+			</tr>
+		
+			<!--  <tr th:each = "item: ${condensedCart}">
+			<td th:text = "${item.name}" />			
 			<td th:text = "${item.weight}"/>
 			<td th:text = "${item.type}"/>
-			<td th:text = "${item.totalCost}"/>			
+			<td th:text = "${item.totalCost}"/>	-->	
+				
 		</tbody>
 	
 	</table>
