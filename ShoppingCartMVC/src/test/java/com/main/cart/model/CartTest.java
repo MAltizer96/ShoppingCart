@@ -14,17 +14,17 @@ class CartTest {
 	void setUp() throws Exception {
 
 		cart = new Cart();
-		cart.addItem(new Item(1,"Soup", 0.99, 0.2,"canned goods"));
-		cart.addItem(new Item(1,"Soup", 0.99, 0.2,"canned goods"));
-		cart.addItem(new Item(1,"Soup", 0.99, 0.2,"canned goods"));
-		cart.addItem(new Item(2,"Candy", 1.99, 1,"snacks"));
-		cart.addItem(new Item(2,"Candy", 1.99, 1,"snacks"));
-		cart.addItem(new Item(3,"Onion", 5.99, 5,"vegetabel"));
+		cart.addItem(new Item(1,"Soup", 0.99,"canned goods"));
+		cart.addItem(new Item(1,"Soup", 0.99, "canned goods"));
+		cart.addItem(new Item(1,"Soup", 0.99, "canned goods"));
+		cart.addItem(new Item(2,"Candy", 1.99,"snacks"));
+		cart.addItem(new Item(2,"Candy", 1.99, "snacks"));
+		cart.addItem(new Item(3,"Onion", 5.99, "vegetabel"));
 	}
 
 	@Test
 	void getTotalNumberOfCertainItemInCartTest() {
-		assertEquals(2, cart.getTotalNumberOfCertainItemInCart(new Item(2,"Candy", 1.99, 1,"snacks")));
+		assertEquals(2, cart.getTotalNumberOfCertainItemInCart(new Item(2,"Candy", 1.99, "snacks")));
 	}
 	
 	@Test
