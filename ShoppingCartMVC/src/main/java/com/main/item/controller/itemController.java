@@ -36,8 +36,7 @@ public class ItemController {
 	}
 	
 	@RequestMapping("/saveItem")
-	public String addItem(@ModelAttribute Item item) {
-		
+	public String addItem(@ModelAttribute Item item) {		
 		repo.save(item);		
 		return "redirect:addItem";
 	}
