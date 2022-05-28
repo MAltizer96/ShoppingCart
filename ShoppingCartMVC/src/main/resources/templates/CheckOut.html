@@ -11,16 +11,6 @@
 	crossorigin="anonymous" />
 </head>
 <body>
-
-
-
-	
-	
-		
-				
-	
-	
-	
 	
 	<div class = "container">
 	<table class="table table-bordered table-striped" id="itemTable">
@@ -28,7 +18,7 @@
 		<thead>
 			<tr>
 				<th>Item Name</th>
-				<th>Item Weight</th>
+				
 				<th>Item Type</th>
 				<th>Item Price</th>
 				<th>Total Items</th>
@@ -38,9 +28,9 @@
 			
 			<tr th:each = "item : ${cart.getItemsInListNoRepeat()}" >
 			<td th:text = "${item.getName()}" />
-			<td th:text = "${item.getWeight()}" />
+			
 			<td th:text = "${item.getType()}" />
-			<td th:text = "${item.getTotalPrice()}" />			
+			<td th:text = "${item.getPrice()}" />			
 			<td th:text = "${cart.getTotalNumberOfCertainItemInCart(item)}"/>
 			
 			<!-- 
