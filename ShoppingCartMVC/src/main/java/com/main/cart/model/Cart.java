@@ -52,7 +52,7 @@ public class Cart {
 	public double getTotalPrice() {
 		double totalPrice = 0;
 		for (Item item : list) {
-			totalPrice += item.getTotalPrice();
+			totalPrice += item.getPrice();
 		}
 		return totalPrice;
 	}
