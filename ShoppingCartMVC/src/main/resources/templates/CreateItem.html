@@ -10,7 +10,9 @@
 <body>
 	<div class="container">
 		<h3>Add Item</h3>
+		<a th:href="@{/item/}" class="btn btn-primary">Item List</a>
 		<hr />
+		
 		<form th:action="@{/item/saveItem}" th:object="${item}" method="POST">
 			<input type="text" th:field="*{name}" class="form-control col-4 mb-4"placeholder= "Enter Item Name" /> 
 										
@@ -19,9 +21,7 @@
 			<input type ="text" th:feild = "*{weight}" class = "form-control col-4 mb-4" placeholder = "Enter Weight" />
 			 -->
 			<input type ="text" th:field = "*{type}" class = "form-control col-4 mb-4" placeholder = "Enter Item type"/>
-			<button type="submit" class="btn btn-primary col-2">Save</button>
-
-			
+			<button type="submit" class="btn btn-primary col-2">Save Item</button>		
 		</form>
 	</div>
 
