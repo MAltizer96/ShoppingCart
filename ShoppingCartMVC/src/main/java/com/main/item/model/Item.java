@@ -1,6 +1,5 @@
 package com.main.item.model;
 
-import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,31 +21,31 @@ public class Item {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;	
-	private double totalPrice;
-	private double weight;
+	private double price;
+	
 	private String type;
 	
-	public Item(int id,String name, double price, double weight) {
+	public Item(int id,String name, double price) {
 		super();
 		this.id=id;
 		this.name = name;
-		this.totalPrice = price;
-		this.weight = weight;
+		this.price = price;
+		
 	}
-	public Item(int id,String name, double price, double weight, String type) {
+	public Item(int id,String name, double price, String type) {
 		super();
 		this.id=id;
 		this.name = name;
-		this.totalPrice = price;
-		this.weight = weight;
+		this.price = price;
+		
 		this.type=type;
 	}
 	
-	public Item(String name,double price, double weight) {
+	public Item(String name,double price) {
 		super();
 		this.name = name;
-		this.totalPrice = price;
-		this.weight = weight;
+		this.price = price;
+		
 	}
 	
 	
@@ -57,7 +56,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", totalPrice=" + totalPrice + ", weight=" + weight + ", type="
+		return "Item [id=" + id + ", name=" + name + ", price=" + price  + ", type="
 				+ type + "]";
 	}
 
