@@ -22,8 +22,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Name</th>				
-					<th>Price</th>
-					<th>Weight</th>
+					<th>Price</th>					
 					<th>Type</th>
 					<th th:text = ${cartSize}></th>
 				</tr>			
@@ -33,8 +32,7 @@
 						
 					<td th:text = ${item.getId()}/>
 					<td th:text = ${item.getName()}/>					
-					<td th:text = ${item.getTotalPrice()}/>
-					<td th:text = ${item.getWeight()}/>
+					<td th:text = ${item.getPrice()}/>					
 					<td th:text = ${item.getType()}/>
 					<td>					
 					<a th:href="@{/cart/addToCart/{id}(id=${item.id})}" class="btn btn-primary" ><span>Add</span></a>				
